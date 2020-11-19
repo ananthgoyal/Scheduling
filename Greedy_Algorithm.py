@@ -5,6 +5,7 @@ solution = []
 time = 0
 k = 3
 
+#main greedy solve
 def solve(units, preds, comps, time, k):
     start = 0
     cache = []
