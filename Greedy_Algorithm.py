@@ -23,22 +23,28 @@ def solve(units, preds, comps, time, k):
                     cache.append(units[i+1])
                     start = units[i+1]
                     break
-        cache.clear()
+        solution.append(cache)
+        cache = []
         time += 1
-    print("Moves/Time:" + str(time))
+    print("Time: " + str(time))
+    print("Greedy Solution: " + str(solution))
 
 #solve time for all root nodes
 def rootSolve(units, preds, comps, time, k):
     start = 0
+    cache = []
     while rootCheck(units, preds, comps) == 0:
         for j in range(0, k):
             for i in range(start, len(preds)):
                 if len(preds[units[i]]) == 0:
                     comps[units[i]] = 1
+                    cache.append(units[i])
                     if i+1 == len(units):
                         break
                     start = units[i+1]
                     break
+        solution.append(cache)
+        cache = []
         time += 1
     return time
 
