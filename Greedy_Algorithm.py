@@ -3,7 +3,7 @@ preds = [[], [0], [0], [0, 1, 2], [1, 5], [], [], [3, 4, 6], [2, 3, 7]]
 comps = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 solution = []
 time = 0
-k = 3
+k = 4
 
 #main greedy solve
 def solve(units, preds, comps, time, k):
