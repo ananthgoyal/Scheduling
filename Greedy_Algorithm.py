@@ -1,9 +1,10 @@
-units = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-preds = [[], [0], [0], [0, 1, 2], [1, 5], [], [], [3, 4, 6], [2, 3, 7]]
-comps = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+from DAG_Generator import*
+units = [] #[0, 1, 2, 3, 4, 5, 6, 7, 8]
+preds = []#[[], [0], [0], [0, 1, 2], [1, 5], [], [], [3, 4, 6], [2, 3, 7]]
+comps = []#[0, 0, 0, 0, 0, 0, 0, 0, 0]
 solution = []
 time = 0
-k = 4
+k = 2
 
 #main greedy solve
 def solve(units, preds, comps, time, k):
@@ -82,4 +83,10 @@ def commonVal(list1, list2):
                 return True
     return False
 
+units, preds, comps = generate(10, 4)
+print("Units: " + str(units))
+print("Predecessors: " + str(preds))
+print("Completed[s]: " + str(comps))
+print("Processor[s]: " + str(k))
+print()
 solve(units, preds, comps, time, k)
