@@ -1,4 +1,5 @@
 import random
+
 def generate(n, lim):
     units = []
     preds = []
@@ -19,6 +20,3 @@ def generate(n, lim):
     return units, preds, comps
 
 
-
-
-generate(10, 4)
