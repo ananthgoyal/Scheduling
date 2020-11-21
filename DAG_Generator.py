@@ -1,11 +1,7 @@
 import random
 
-def generate(n, lim):
-    units = []
-    preds = []
-    comps = []
-    val = 0
-    cache = []
+def generate(n, lim, nullChance):
+    units, preds, comps, cache = [], [], [], []
     for i in range (0, n):
         units.append(i)
         comps.append(0)
@@ -15,7 +11,10 @@ def generate(n, lim):
             val = random.randrange(0, i)
             if val not in cache:
                 cache.append(val)
-        preds.append(cache)
+        if random.randrange(0, 100) < nullChance:
+           preds.append([])
+        else:
+            preds.append(cache)
         cache = []
     return units, preds, comps
 
