@@ -1,6 +1,5 @@
 from DAG_Generator import*
 from Greedy_Algorithm import*
-from Brute_Force_Algorithm import*
 
 time = 0
 k = 8 #number of processors
